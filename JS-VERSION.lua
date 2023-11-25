@@ -1,3 +1,5 @@
+local guiService = game:GetService("GuiService")
+
 function alert(message)
     print(message)
 end
@@ -15,12 +17,12 @@ function confirm(message)
     return io.read() == "y"
 end
 
-function setTimeout(callback, delay)
+function setTimeout(callback,delay)
     wait(delay)
     callback()
 end
 
-function setInterval(callback, interval)
+function setInterval(callback,interval)
 task.spawn(function()
     while true do
         wait(interval)
@@ -41,11 +43,11 @@ function getElementById(id)
     return workspace:WaitForChild(id)
 end
 
-function addEventListener(element, event, callback)
+function addEventListener(element,event,callback)
     element[event]:Connect(callback)
 end
 
-function changeColor(element, newColor)
+function changeColor(element,newColor)
     element.BrickColor = BrickColor.new(newColor)
 end
 
@@ -57,21 +59,21 @@ function showElement(element)
     element.Transparency = 0
 end
 
-function moveElement(element, newPosition)
+function moveElement(element,newPosition)
     element.Position = newPosition
 end
 
-function resizeElement(element, newSize)
+function resizeElement(element,newSize)
     element.Size = newSize
 end
 
-function updateText(element, newText)
+function updateText(element,newText)
     if element:IsA("TextLabel") or element:IsA("TextBox") or element:IsA("TextButton") then
         element.Text = newText
     end
 end
 
-function createElement(elementType, parent, properties)
+function createElement(elementType,parent,properties)
     local newElement = Instance.new(elementType)
     
     for property, value in pairs(properties) do
@@ -82,7 +84,7 @@ function createElement(elementType, parent, properties)
     return newElement
 end
 
-function rotateElement(element, newRotation)
+function rotateElement(element,newRotation)
     element.Orientation = newRotation
 end
 
@@ -90,7 +92,7 @@ function getCurrentTime()
     return os.date("%H:%M:%S")
 end
 
-function changeModel(element, newModel)
+function changeModel(element,newModel)
     element.Model = newModel
 end
 
@@ -98,7 +100,7 @@ function getPiValue()
     return math.pi
 end
 
-function setTransparency(element, newTransparency)
+function setTransparency(element,newTransparency)
     element.Transparency = newTransparency
 end
 
